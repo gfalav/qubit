@@ -11,7 +11,7 @@ class Home extends StatelessWidget {
         elevation: 100,
       ),
       body: Center(
-        child: Text('Welcome to the Home Page'),
+        child: Image.asset("lib/assets/images/QubitLogo.png"),
       ),
     );
   }
