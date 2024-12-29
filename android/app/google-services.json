@@ -1,0 +1,67 @@
+{
+  "project_info": {
+    "project_number": "927539259838",
+    "project_id": "qubit-8e3ba",
+    "storage_bucket": "qubit-8e3ba.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:927539259838:android:007d7c02d4a21f1e65f1ef",
+        "android_client_info": {
+          "package_name": "com.example.com"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDEAnLReACaVAGmXm7UpWfon1KKoXXJeBg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:927539259838:android:47d63275a9610cb265f1ef",
+        "android_client_info": {
+          "package_name": "com.example.qubit"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDEAnLReACaVAGmXm7UpWfon1KKoXXJeBg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:927539259838:android:1dfed84c55d8288865f1ef",
+        "android_client_info": {
+          "package_name": "com.qubit.app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDEAnLReACaVAGmXm7UpWfon1KKoXXJeBg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

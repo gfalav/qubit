@@ -1,0 +1,47 @@
+{
+  "flutter": {
+    "platforms": {
+      "android": {
+        "default": {
+          "projectId": "qubit-8e3ba",
+          "appId": "1:927539259838:android:47d63275a9610cb265f1ef",
+          "fileOutput": "android/app/google-services.json"
+        }
+      },
+      "dart": {
+        "lib/firebase_options.dart": {
+          "projectId": "qubit-8e3ba",
+          "configurations": {
+            "android": "1:927539259838:android:47d63275a9610cb265f1ef",
+            "ios": "1:927539259838:ios:2b831c509f002cad65f1ef",
+            "macos": "1:927539259838:ios:2b831c509f002cad65f1ef",
+            "web": "1:927539259838:web:b80cb1a2a36c5abe65f1ef",
+            "windows": "1:927539259838:web:fc8fcfefd124754565f1ef"
+          }
+        }
+      }
+    }
+  },
+  "firestore": {
+    "rules": "firestore.rules",
+    "indexes": "firestore.indexes.json"
+  },
+  "storage": {
+    "rules": "storage.rules"
+  },
+  "emulators": {
+    "auth": {
+      "port": 9099
+    },
+    "firestore": {
+      "port": 8080
+    },
+    "storage": {
+      "port": 9199
+    },
+    "ui": {
+      "enabled": true
+    },
+    "singleProjectMode": true
+  }
+}
