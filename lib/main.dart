@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
+import 'package:get/get.dart';
 import 'firebase_options.dart';
 import 'package:qubit/assets/theme/theme.dart';
 import 'package:qubit/assets/theme/util.dart';
@@ -24,7 +25,7 @@ class MyApp extends StatelessWidget {
         createTextTheme(context, "Open Sans", "Open Sans Condensed");
 
     MaterialTheme theme = MaterialTheme(textTheme);
-    return MaterialApp(
+    return GetMaterialApp(
         title: 'Qubit',
         debugShowCheckedModeBanner: false,
         theme: brightness == Brightness.light ? theme.light() : theme.dark(),
