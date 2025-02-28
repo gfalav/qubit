@@ -1,9 +1,18 @@
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:qubit/app/ui/home/home.dart';
 import 'package:qubit/app/ui/theme/util.dart';
 import 'package:qubit/app/ui/theme/theme.dart';
+import 'package:qubit/firebase_options.dart';
 
-void main() {
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
+  await FirebaseAuth.instance.useAuthEmulator('localhost', 9099);
   runApp(const MyApp());
 }
 
@@ -22,7 +31,7 @@ class MyApp extends StatelessWidget {
       title: 'Qubit',
       debugShowCheckedModeBanner: false,
       theme: brightness == Brightness.light ? theme.light() : theme.dark(),
-      home: const MyHomePage(title: 'Qubit Home Page'),
+      home: Home(),
     );
   }
 }
