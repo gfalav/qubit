@@ -17,7 +17,7 @@ class Home extends StatelessWidget {
           () => Column(
             children: [
               Text(
-                userController.isLogged.value.toString(),
+                userController.emailUsr.value,
               ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
