@@ -82,9 +82,7 @@ class UserController extends GetxController {
 
   Future<void> sendEmailVerification() async {
     try {
-      print(emailUsr.value);
       await FirebaseAuth.instance.currentUser!.sendEmailVerification();
-      print(await FirebaseAuth.instance.currentUser!.email);
     } on FirebaseAuthException catch (e) {
       Get.snackbar(
         "Error sending email verification",
