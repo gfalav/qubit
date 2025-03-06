@@ -34,7 +34,21 @@ class Home extends StatelessWidget {
                   ),
                   FilledButton(
                     onPressed: () => {userController.signOut()},
-                    child: Text("Sign Out"),
+                    child: Text("Sign out"),
+                  ),
+                  FilledButton(
+                    onPressed: () => {userController.sendEmailVerification()},
+                    child: Text("Verify Mail"),
+                  ),
+                  FilledButton(
+                    onPressed: () =>
+                        {userController.resetPassword("gfalav@yahoo.com")},
+                    child: Text("Reset Password"),
+                  ),
+                  FilledButton(
+                    onPressed: () =>
+                        {userController.updateDisplayName("Gustavo solo")},
+                    child: Text("Update Display Name"),
                   ),
                 ],
               )
