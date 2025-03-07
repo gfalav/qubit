@@ -1,10 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:qubit/app/controllers/app_controller.dart';
-import 'package:qubit/app/ui/home/home.dart';
 
 class MyBody extends StatelessWidget {
-  const MyBody({super.key});
+  final Widget left;
+  final Widget right;
+  final Widget bottom;
+
+  const MyBody({
+    super.key,
+    required this.left,
+    required this.right,
+    required this.bottom,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -20,19 +28,20 @@ class MyBody extends StatelessWidget {
                     visible: appController.devType.value != "Mobile",
                     child: Container(
                       height: appController.height.value - 104,
-                      width: 290,
+                      width: appController.leftPanelWidth.value,
                       color: Colors.blue,
-                      child: Text("Col 1"),
+                      child: left,
                     ),
                   ),
                   Container(
                     constraints: BoxConstraints(minWidth: 360),
                     width: appController.devType.value == "Mobile"
                         ? appController.width.value
-                        : appController.width.value - 290,
+                        : appController.width.value -
+                            appController.leftPanelWidth.value,
                     height: appController.height.value - 104,
                     color: Colors.green,
-                    child: Home(),
+                    child: right,
                   ),
                 ],
               ),
@@ -40,7 +49,7 @@ class MyBody extends StatelessWidget {
                 height: 48,
                 width: appController.width.value,
                 color: Colors.cyan,
-                child: Text("Row 2"),
+                child: bottom,
               ),
             ],
           ),

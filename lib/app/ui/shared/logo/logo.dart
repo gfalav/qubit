@@ -5,6 +5,13 @@ class Logo extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    return Column(
+      mainAxisAlignment: MainAxisAlignment.start,
+      children: [
+        Image.asset(
+          "lib/assets/images/Qubit-POS.png",
+        ),
+      ],
+    );
   }
 }

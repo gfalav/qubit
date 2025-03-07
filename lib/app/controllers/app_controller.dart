@@ -7,6 +7,7 @@ class AppController extends GetxController {
   final RxBool visibleDrawer = true.obs;
   final RxDouble width = 0.0.obs;
   final RxDouble height = 0.0.obs;
+  final RxDouble leftPanelWidth = 690.0.obs;
 
   void setDevType(double width, double height) {
     this.width.value = width;

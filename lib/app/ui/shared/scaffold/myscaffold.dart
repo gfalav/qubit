@@ -6,7 +6,15 @@ import 'package:qubit/app/ui/shared/scaffold/mybody.dart';
 import 'package:qubit/app/ui/shared/scaffold/mydrawer.dart';
 
 class MyScaffold extends StatelessWidget {
-  const MyScaffold({super.key});
+  final Widget left;
+  final Widget right;
+  final Widget bottom;
+
+  const MyScaffold(
+      {super.key,
+      required this.left,
+      required this.right,
+      required this.bottom});
 
   @override
   Widget build(BuildContext context) {
@@ -19,7 +27,11 @@ class MyScaffold extends StatelessWidget {
         appBar: appController.visibleAppBar.value
             ? MyAppbar().appBar(context)
             : null,
-        body: MyBody(),
+        body: MyBody(
+          left: left,
+          right: right,
+          bottom: bottom,
+        ),
         drawer: appController.visibleDrawer.value &&
                 appController.devType.value == "Mobile"
             ? MyDrawer()
