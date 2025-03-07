@@ -8,53 +8,46 @@ class Home extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text('Home'),
-      ),
-      body: Center(
-        child: Obx(
-          () => Column(
+    return Obx(
+      () => Column(
+        children: [
+          Text(
+            userController.emailUsr.value,
+          ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Text(
-                userController.emailUsr.value,
+              FilledButton(
+                onPressed: () =>
+                    {userController.signUp("gfalav@yahoo.com", "pppppp")},
+                child: Text("Sign Up"),
               ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  FilledButton(
-                    onPressed: () =>
-                        {userController.signUp("gfalav@yahoo.com", "pppppp")},
-                    child: Text("Sign Up"),
-                  ),
-                  FilledButton(
-                    onPressed: () =>
-                        {userController.signIn("gfalav@yahoo.com", "pppppp")},
-                    child: Text("Sign In"),
-                  ),
-                  FilledButton(
-                    onPressed: () => {userController.signOut()},
-                    child: Text("Sign out"),
-                  ),
-                  FilledButton(
-                    onPressed: () => {userController.sendEmailVerification()},
-                    child: Text("Verify Mail"),
-                  ),
-                  FilledButton(
-                    onPressed: () =>
-                        {userController.resetPassword("gfalav@yahoo.com")},
-                    child: Text("Reset Password"),
-                  ),
-                  FilledButton(
-                    onPressed: () =>
-                        {userController.updateDisplayName("Gustavo solo")},
-                    child: Text("Update Display Name"),
-                  ),
-                ],
-              )
+              FilledButton(
+                onPressed: () =>
+                    {userController.signIn("gfalav@yahoo.com", "pppppp")},
+                child: Text("Sign In"),
+              ),
+              FilledButton(
+                onPressed: () => {userController.signOut()},
+                child: Text("Sign out"),
+              ),
+              FilledButton(
+                onPressed: () => {userController.sendEmailVerification()},
+                child: Text("Verify Mail"),
+              ),
+              FilledButton(
+                onPressed: () =>
+                    {userController.resetPassword("gfalav@yahoo.com")},
+                child: Text("Reset Password"),
+              ),
+              FilledButton(
+                onPressed: () =>
+                    {userController.updateDisplayName("Gustavo solo")},
+                child: Text("Update Display Name"),
+              ),
             ],
           ),
-        ),
+        ],
       ),
     );
   }
