@@ -7,12 +7,14 @@ import 'package:qubit/app/ui/shared/scaffold/mydrawer.dart';
 
 class MyScaffold extends StatelessWidget {
   final Widget left;
+  final Widget mainBody;
   final Widget right;
   final Widget bottom;
 
   const MyScaffold(
       {super.key,
       required this.left,
+      required this.mainBody,
       required this.right,
       required this.bottom});
 
@@ -20,7 +22,9 @@ class MyScaffold extends StatelessWidget {
   Widget build(BuildContext context) {
     final AppController appController = Get.put(AppController());
     appController.setDevType(
-        MediaQuery.of(context).size.width, MediaQuery.of(context).size.height);
+      MediaQuery.of(context).size.width,
+      MediaQuery.of(context).size.height,
+    );
 
     return Obx(
       () => Scaffold(
@@ -29,6 +33,7 @@ class MyScaffold extends StatelessWidget {
             : null,
         body: MyBody(
           left: left,
+          mainBody: mainBody,
           right: right,
           bottom: bottom,
         ),

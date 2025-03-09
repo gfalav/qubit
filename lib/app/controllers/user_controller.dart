@@ -8,10 +8,17 @@ class UserController extends GetxController {
   final displayName = ''.obs;
   final photoURL = ''.obs;
 
+  final nameController = TextEditingController(text: 'Gustavo Falavigna');
+  final emailController = TextEditingController(text: 'gfalav@yahoo.com');
+  final passwordController = TextEditingController(text: 'pppppppp');
+  final repasswordController = TextEditingController(text: 'pppppppp');
+  final oldPasswordController = TextEditingController(text: 'pppppppp');
+
   @override
   void onInit() {
-    super.onInit();
     subscribeAuthChanges();
+    ever(isLogged, (callback) => routeIsLogged());
+    super.onInit();
   }
 
   void subscribeAuthChanges() {
@@ -32,11 +39,11 @@ class UserController extends GetxController {
     );
   }
 
-  Future<void> signUp(String email, String password) async {
+  Future<void> signUp() async {
     try {
       await FirebaseAuth.instance.createUserWithEmailAndPassword(
-        email: email,
-        password: password,
+        email: emailController.text,
+        password: passwordController.text,
       );
     } on FirebaseAuthException catch (e) {
       Get.snackbar(
@@ -49,11 +56,11 @@ class UserController extends GetxController {
     }
   }
 
-  Future<void> signIn(String email, String password) async {
+  Future<void> signIn() async {
     try {
       await FirebaseAuth.instance.signInWithEmailAndPassword(
-        email: email,
-        password: password,
+        email: emailController.text,
+        password: passwordController.text,
       );
     } on FirebaseAuthException catch (e) {
       Get.snackbar(
@@ -147,6 +154,14 @@ class UserController extends GetxController {
         backgroundColor: const Color.fromARGB(91, 142, 147, 254),
         duration: const Duration(seconds: 5),
       );
+    }
+  }
+
+  void routeIsLogged() {
+    if (isLogged.value) {
+      Get.offAllNamed("/home");
+    } else {
+      Get.offAllNamed("/signin");
     }
   }
 }

@@ -4,12 +4,13 @@ import 'package:qubit/app/controllers/app_controller.dart';
 
 class MyBody extends StatelessWidget {
   final Widget left;
+  final Widget mainBody;
   final Widget right;
   final Widget bottom;
-
   const MyBody({
     super.key,
     required this.left,
+    required this.mainBody,
     required this.right,
     required this.bottom,
   });
@@ -18,41 +19,54 @@ class MyBody extends StatelessWidget {
   Widget build(BuildContext context) {
     final AppController appController = Get.put(AppController());
 
-    return Obx(() => SafeArea(
-          child: Column(
-            children: [
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
+    return Obx(
+      () => SafeArea(
+        child: Column(
+          children: [
+            Expanded(
+              flex: 10,
+              child: Row(
                 children: [
                   Visibility(
-                    visible: appController.devType.value != "Mobile",
+                    visible: appController.visibleLeftPanel.value &&
+                        appController.devType.value != "Mobile",
                     child: Container(
-                      height: appController.height.value - 104,
-                      width: appController.leftPanelWidth.value,
                       color: Colors.blue,
+                      width: appController.width *
+                          appController.leftPanelWidth.value,
                       child: left,
                     ),
                   ),
-                  Container(
-                    constraints: BoxConstraints(minWidth: 360),
+                  SizedBox(
                     width: appController.devType.value == "Mobile"
                         ? appController.width.value
-                        : appController.width.value -
-                            appController.leftPanelWidth.value,
-                    height: appController.height.value - 104,
-                    color: Colors.green,
-                    child: right,
+                        : appController.width *
+                            appController.mainPanelWidth.value,
+                    child: mainBody,
+                  ),
+                  Visibility(
+                    visible: appController.visibleRightPanel.value &&
+                        appController.devType.value != "Mobile",
+                    child: SizedBox(
+                      width: appController.width *
+                          appController.rightPanelWidth.value,
+                      child: right,
+                    ),
                   ),
                 ],
               ),
-              Container(
-                height: 48,
+            ),
+            Visibility(
+              visible: appController.visibleBottomBar.value,
+              child: SizedBox(
                 width: appController.width.value,
-                color: Colors.cyan,
+                height: 48,
                 child: bottom,
               ),
-            ],
-          ),
-        ));
+            ),
+          ],
+        ),
+      ),
+    );
   }
 }
