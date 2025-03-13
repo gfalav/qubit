@@ -26,10 +26,15 @@ class Myscaffold extends StatelessWidget {
       MediaQuery.of(context).size.height,
     );
 
-    return Scaffold(
-      appBar: MyAppBar().appBar(context),
-      drawer: Mydrawer(),
-      body: Mybody(left: left, main: main, right: right, bottom: bottom),
+    return Obx(
+      () => Scaffold(
+        appBar:
+            appController.appBarVisible.value
+                ? MyAppBar().appBar(context)
+                : null,
+        drawer: appController.devType.value == 'Mobile' ? Mydrawer() : null,
+        body: Mybody(left: left, main: main, right: right, bottom: bottom),
+      ),
     );
   }
 }
