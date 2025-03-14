@@ -10,16 +10,19 @@ class MyMessages extends StatelessWidget {
     final MessagesController messagesController = Get.put(MessagesController());
 
     return Obx(
-      () => Badge(
-        backgroundColor:
-            messagesController.messages.isNotEmpty
-                ? Colors.red
-                : Colors.transparent,
-        label:
-            messagesController.messages.isNotEmpty
-                ? Text(messagesController.messages.length.toString())
-                : null,
-        child: IconButton(onPressed: () {}, icon: Icon(Icons.notifications)),
+      () => Padding(
+        padding: EdgeInsets.only(right: 6),
+        child: Badge(
+          backgroundColor:
+              messagesController.messages.isNotEmpty
+                  ? Colors.red
+                  : Colors.transparent,
+          label:
+              messagesController.messages.isNotEmpty
+                  ? Text(messagesController.messages.length.toString())
+                  : null,
+          child: IconButton(onPressed: () {}, icon: Icon(Icons.notifications)),
+        ),
       ),
     );
   }

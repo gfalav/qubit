@@ -5,12 +5,12 @@ import 'package:qubit/shared/ui/scaffold/myappbar.dart';
 import 'package:qubit/shared/ui/scaffold/mybody.dart';
 import 'package:qubit/shared/ui/scaffold/mydrawer.dart';
 
-class Myscaffold extends StatelessWidget {
+class MyScaffold extends StatelessWidget {
   final Widget left;
   final Widget main;
   final Widget right;
   final Widget bottom;
-  const Myscaffold({
+  const MyScaffold({
     super.key,
     required this.left,
     required this.main,

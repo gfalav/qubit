@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:qubit/shared/controllers/app_controller.dart';
 import 'package:qubit/shared/ui/scaffold/mymessages.dart';
+import 'package:qubit/shared/ui/user/useraction/useraction.dart';
 
 class MyAppBar {
   PreferredSizeWidget appBar(BuildContext context) {
@@ -33,6 +34,12 @@ class MyAppBar {
           () => Visibility(
             visible: appController.appBarActionsVisible.value,
             child: MyMessages(),
+          ),
+        ),
+        Obx(
+          () => Visibility(
+            visible: appController.appBarActionsVisible.value,
+            child: UserAction(),
           ),
         ),
       ],

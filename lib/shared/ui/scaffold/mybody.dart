@@ -32,19 +32,21 @@ class Mybody extends StatelessWidget {
                       appController.devType.value != 'Mobile',
                   child: Container(
                     width: appController.leftPanelWidth.value,
-                    color: Colors.blue,
+                    color: ColorScheme.of(context).surfaceContainerLowest,
                     child: left,
                   ),
                 ),
-                Container(
-                  width:
-                      appController.devType.value == 'Mobile'
-                          ? appController.screenWidth.value
-                          : appController.screenWidth.value -
-                              appController.leftPanelWidth.value -
-                              appController.rightPanelWidth.value,
-                  color: Colors.green,
-                  child: main,
+                SingleChildScrollView(
+                  child: Container(
+                    width:
+                        appController.devType.value == 'Mobile'
+                            ? appController.screenWidth.value
+                            : appController.screenWidth.value -
+                                appController.leftPanelWidth.value -
+                                appController.rightPanelWidth.value,
+                    color: ColorScheme.of(context).surface,
+                    child: main,
+                  ),
                 ),
                 Visibility(
                   visible:
@@ -52,18 +54,21 @@ class Mybody extends StatelessWidget {
                       appController.devType.value != 'Mobile',
                   child: Container(
                     width: appController.rightPanelWidth.value,
-                    color: Colors.cyan,
+                    color: ColorScheme.of(context).surfaceContainerLowest,
                     child: right,
                   ),
                 ),
               ],
             ),
           ),
-          Container(
-            width: appController.screenWidth.value,
-            height: 48,
-            color: ColorScheme.of(context).surfaceContainer,
-            child: main,
+          Visibility(
+            visible: appController.bottomPanelVisible.value,
+            child: Container(
+              width: appController.screenWidth.value,
+              height: 48,
+              color: ColorScheme.of(context).surfaceContainer,
+              child: bottom,
+            ),
           ),
         ],
       ),
