@@ -106,6 +106,8 @@ class UserController extends GetxController {
         duration: const Duration(seconds: 5),
       );
       signOut();
+    } catch (e) {
+      print(e);
     }
   }
 
@@ -129,6 +131,7 @@ class UserController extends GetxController {
   Future<void> signOut() async {
     try {
       await FirebaseAuth.instance.signOut();
+      Get.offAllNamed("/signin");
     } on FirebaseAuthException catch (e) {
       Get.snackbar(
         "Error on SignOut",
