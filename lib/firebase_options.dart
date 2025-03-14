@@ -63,6 +63,8 @@ class DefaultFirebaseOptions {
     messagingSenderId: '839977485872',
     projectId: 'qubit-7cc0f',
     storageBucket: 'qubit-7cc0f.firebasestorage.app',
+    androidClientId: '839977485872-idbtcp4kk8tidrsp1bptc05805m5c4u6.apps.googleusercontent.com',
+    iosClientId: '839977485872-tbj0u70sels0p6qgia7b6p9vkdr7b4su.apps.googleusercontent.com',
     iosBundleId: 'com.example.qubit',
   );
 
@@ -72,6 +74,8 @@ class DefaultFirebaseOptions {
     messagingSenderId: '839977485872',
     projectId: 'qubit-7cc0f',
     storageBucket: 'qubit-7cc0f.firebasestorage.app',
+    androidClientId: '839977485872-idbtcp4kk8tidrsp1bptc05805m5c4u6.apps.googleusercontent.com',
+    iosClientId: '839977485872-tbj0u70sels0p6qgia7b6p9vkdr7b4su.apps.googleusercontent.com',
     iosBundleId: 'com.example.qubit',
   );
 

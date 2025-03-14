@@ -163,7 +163,9 @@ class SignInForm extends StatelessWidget {
                       Padding(
                         padding: EdgeInsets.only(left: 4, right: 4),
                         child: IconButton(
-                          onPressed: () {},
+                          onPressed: () {
+                            userController.signInWithGoogle();
+                          },
                           icon: FaIcon(
                             FontAwesomeIcons.google,
                             size: 40,
