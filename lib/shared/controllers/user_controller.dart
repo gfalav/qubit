@@ -106,8 +106,6 @@ class UserController extends GetxController {
         duration: const Duration(seconds: 5),
       );
       signOut();
-    } catch (e) {
-      print(e);
     }
   }
 

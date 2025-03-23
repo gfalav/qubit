@@ -1,5 +1,6 @@
 import 'package:accordion/accordion.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:qubit/shared/ui/logo/enterprise_logo.dart';
 
@@ -21,15 +22,17 @@ class Menu extends StatelessWidget {
           children: [
             AccordionSection(
               header: ListTile(
-                title: Text("Opción 1", style: GoogleFonts.openSansCondensed()),
+                title: Text("Mapa", style: GoogleFonts.openSansCondensed()),
               ),
               content: Column(
                 children: [
                   InkWell(
-                    onTap: () {},
+                    onTap: () {
+                      Get.toNamed("/mapa");
+                    },
                     child: ListTile(
                       title: Text(
-                        "Subopción 1-1",
+                        "Ver mapa",
                         style: GoogleFonts.openSansCondensed(),
                       ),
                     ),

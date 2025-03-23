@@ -2,6 +2,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:qubit/app/ui/osm/osm.dart';
 import 'package:qubit/shared/controllers/user_controller.dart';
 import 'package:qubit/shared/ui/home/home.dart';
 import 'package:qubit/shared/ui/theme/theme.dart';
@@ -18,7 +19,7 @@ import 'firebase_options.dart';
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
-  //await FirebaseAuth.instance.useAuthEmulator('localhost', 9099);
+  await FirebaseAuth.instance.useAuthEmulator('localhost', 9099);
   await FirebaseStorage.instance.useStorageEmulator('localhost', 9199);
   runApp(const MyApp());
 }
@@ -54,6 +55,7 @@ class MyApp extends StatelessWidget {
         GetPage(name: "/changepwd", page: () => Changepassword()),
         GetPage(name: "/updateuser", page: () => ChangeUsrName()),
         GetPage(name: "/changephoto", page: () => Changephotousr()),
+        GetPage(name: "/mapa", page: () => Osm()),
       ],
     );
   }
